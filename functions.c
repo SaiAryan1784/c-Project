@@ -1,5 +1,5 @@
 #include "functions.h" // Function definitions
-static int getsum(int x, int y){
+int getsum(int x, int y){
     return x + y;
 }
 
