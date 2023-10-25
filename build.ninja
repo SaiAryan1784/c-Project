@@ -1,0 +1,19 @@
+# Define the C compiler
+cc = gcc
+
+# Define the C flags
+cflags = -Wall
+
+# Rule for compiling C files
+rule cc_compile
+  command = $cc $cflags -c $in -o $out
+
+# Rule for linking the application
+rule cc_link
+  command = $cc $in -o $out
+
+# Build commands
+build main.o: cc_compile main.c
+build functions.o: cc_compile functions.c
+build main_program: cc_link main.o functions.o
+  default main_program
